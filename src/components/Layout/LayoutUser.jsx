@@ -3,16 +3,31 @@ import { Navbar, Footer, Dropdown, TextInput } from "flowbite-react";
 import { BsFacebook, BsInstagram, BsTwitter } from "react-icons/bs";
 import logo from "../../resources/logo.png";
 import { HiSearch } from "react-icons/hi";
+import { Badge } from "antd";
+import { ShoppingCartOutlined } from "@ant-design/icons";
+import useScreen from "../../hook/useScreen";
 
 const LayoutUser = ({ children }) => {
+  const { isMobile } = useScreen();
   return (
-    <div className="flex flex-col min-h-screen bg-gradient-to-r from-fuchsia-100 to-purple-50">
+    <div className="flex flex-col min-h-screen overflow-hidden bg-gradient-to-r from-fuchsia-100 to-purple-50">
       <Navbar className="py-5" fluid rounded>
         <Navbar.Brand>
-          <img src={logo} width={"180px"} height={"180px"} alt="Logo" />
+          <img
+            className="w-32 md:w-40 xl:w-40 2xl:w-44"
+            src={logo}
+            alt="Logo"
+          />
         </Navbar.Brand>
-        <div className="flex gap-2 md:order-2">
+        <div className="flex items-center gap-4 md:order-2">
           <TextInput type="text" placeholder="Search..." rightIcon={HiSearch} />
+          <div className="cursor-pointer">
+            <Badge count={1}>
+              <ShoppingCartOutlined
+                style={{ fontSize: "30px", color: "#4b4e51" }}
+              />
+            </Badge>
+          </div>
           <Navbar.Toggle />
         </div>
         <Navbar.Collapse>
@@ -27,8 +42,8 @@ const LayoutUser = ({ children }) => {
               <Dropdown.Item>Áo Khoác</Dropdown.Item>
             </Dropdown>
           </Navbar.Link>
-          <Navbar.Link>Giỏ Hàng</Navbar.Link>
           <Navbar.Link>Liên Hệ</Navbar.Link>
+          <Navbar.Link>Bảng Size</Navbar.Link>
           <Navbar.Link>Tài Khoản</Navbar.Link>
         </Navbar.Collapse>
       </Navbar>
@@ -36,12 +51,10 @@ const LayoutUser = ({ children }) => {
       <Footer container>
         <div className="w-full px-8">
           <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
-            <div className="pb-4 px-6">
+            <div className="pb-4">
               <Footer.Brand
-                className="h-full"
+                className="h-full w-32 md:w-40 xl:w-40 2xl:w-44"
                 src={logo}
-                width={"160px"}
-                height={"160px"}
                 alt="logo-teelab"
               />
             </div>

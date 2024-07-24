@@ -8,6 +8,9 @@ module.exports = {
       height: {
         48: "48rem",
       },
+      width: {
+        110: "28rem",
+      },
     },
   },
   plugins: [flowbite.plugin(), daisyui],

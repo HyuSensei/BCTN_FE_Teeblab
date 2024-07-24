@@ -7,7 +7,8 @@ import { Tabs } from "antd";
 import DescriptionDetail from "../components/DescriptionDetail";
 import RateList from "../components/RateList";
 import ProductList from "../components/ProductList";
-import RateModal from "../components/RateModal";
+import RateModal from "../components/Modal/RateModal";
+import { HomeOutlined } from "@ant-design/icons";
 
 const items = [
   {
@@ -78,7 +79,7 @@ const Detail = () => {
   };
 
   return (
-    <div className="py-4 px-8">
+    <div className="px-8 py-4">
       <RateModal
         {...{
           rate,
@@ -89,11 +90,11 @@ const Detail = () => {
           setOpen,
         }}
       />
-      <div className="py-6 md:px-16 xl:px-16 2xl:px-16">
+      <div className="py-6">
         <Breadcrumb>
           <Breadcrumb.Item>
             <div className="text-slate-600 text-base cursor-pointer">
-              Trang Chủ
+              <HomeOutlined /> Trang Chủ
             </div>
           </Breadcrumb.Item>
           <Breadcrumb.Item>
@@ -118,7 +119,7 @@ const Detail = () => {
             />
           </Carousel>
         </div>
-        <div>
+        <div className="flex-grow">
           <div className="text-sm font-medium md:text-base xl:text-xl 2xl:text-xl">
             Áo Thun Teelab Local Brand Unisex Jersey No.88 Tshirt TS274
           </div>

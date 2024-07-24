@@ -7,6 +7,8 @@ const Login = lazy(() => import("../pages/Login"));
 const Register = lazy(() => import("../pages/Register"));
 const Detail = lazy(() => import("../pages/Detail"));
 const Cart = lazy(() => import("../pages/Cart"));
+const Size = lazy(() => import("../pages/Size"));
+const Account = lazy(() => import("../pages/Account"));
 
 const Router = () => {
   return (
@@ -52,10 +54,32 @@ const Router = () => {
         }
       />
       <Route
-        path="/"
+        path="/cart"
         element={
           <Suspense fallback={<div></div>}>
-            <Cart />
+            <LayoutUser>
+              <Cart />
+            </LayoutUser>
+          </Suspense>
+        }
+      />
+      <Route
+        path="/size"
+        element={
+          <Suspense fallback={<div></div>}>
+            <LayoutUser>
+              <Size />
+            </LayoutUser>
+          </Suspense>
+        }
+      />
+      <Route
+        path="/account"
+        element={
+          <Suspense fallback={<div></div>}>
+            <LayoutUser>
+              <Account />
+            </LayoutUser>
           </Suspense>
         }
       />
