@@ -59,17 +59,17 @@ const Account = () => {
               <div className="px-2 text-sm md:text-base xl:text-base 2xl:text-base">
                 <div
                   onClick={() => setSelected("profile")}
-                  className="py-2 px-4 mb-2 bg-slate-50 hover:bg-slate-200 rounded-md font-medium cursor-pointer text-slate-700"
+                  className="py-4 px-4 mb-2  hover:bg-slate-100 rounded-md font-medium cursor-pointer text-slate-700"
                 >
                   <UserOutlined /> Hồ sơ
                 </div>
                 <div
                   onClick={() => setSelected("order")}
-                  className="py-2 px-4 mb-2 bg-slate-50 hover:bg-slate-200  rounded-md font-medium cursor-pointer text-slate-700"
+                  className="py-4 px-4 mb-2  hover:bg-slate-100  rounded-md font-medium cursor-pointer text-slate-700"
                 >
                   <ShoppingCartOutlined /> Đơn hàng
                 </div>
-                <div className="py-2 px-4 mb-2 bg-slate-50 hover:bg-slate-200  rounded-md font-medium cursor-pointer text-slate-700">
+                <div className="py-4 px-4 mb-2  hover:bg-slate-100  rounded-md font-medium cursor-pointer text-slate-700">
                   <LogoutOutlined /> Đăng xuất
                 </div>
               </div>

@@ -5,16 +5,16 @@ import logo from "../../resources/logo.png";
 import { HiSearch } from "react-icons/hi";
 import { Badge } from "antd";
 import { ShoppingCartOutlined } from "@ant-design/icons";
-import useScreen from "../../hook/useScreen";
+import { useNavigate } from "react-router-dom";
 
 const LayoutUser = ({ children }) => {
-  const { isMobile } = useScreen();
+  const navigate = useNavigate();
   return (
-    <div className="flex flex-col min-h-screen overflow-hidden bg-gradient-to-r from-fuchsia-100 to-purple-50">
+    <div className="flex flex-col min-h-screen overflow-hidden bg-gradient-to-r from-fuchsia-50  to-fuchsia-100 ">
       <Navbar className="py-5" fluid rounded>
-        <Navbar.Brand>
+        <Navbar.Brand onClick={() => navigate("/")}>
           <img
-            className="w-32 md:w-40 xl:w-40 2xl:w-44"
+            className="w-32 md:w-40 xl:w-40 2xl:w-44 cursor-pointer"
             src={logo}
             alt="Logo"
           />
@@ -30,8 +30,8 @@ const LayoutUser = ({ children }) => {
           </div>
           <Navbar.Toggle />
         </div>
-        <Navbar.Collapse>
-          <Navbar.Link>Trang Chủ</Navbar.Link>
+        <Navbar.Collapse className="cursor-pointer">
+          <Navbar.Link onClick={() => navigate("/")}>Trang Chủ</Navbar.Link>
           <Navbar.Link>
             <Dropdown label="Danh Mục" inline>
               <Dropdown.Item>Áo Thun</Dropdown.Item>
@@ -42,9 +42,20 @@ const LayoutUser = ({ children }) => {
               <Dropdown.Item>Áo Khoác</Dropdown.Item>
             </Dropdown>
           </Navbar.Link>
-          <Navbar.Link>Liên Hệ</Navbar.Link>
-          <Navbar.Link>Bảng Size</Navbar.Link>
-          <Navbar.Link>Tài Khoản</Navbar.Link>
+          <Navbar.Link onClick={() => navigate("/size")}>Bảng Size</Navbar.Link>
+          <Navbar.Link>
+            <Dropdown label="Tài khoản" inline>
+              <Dropdown.Item onClick={() => navigate("/login")}>
+                Đăng Nhập
+              </Dropdown.Item>
+              <Dropdown.Item onClick={() => navigate("/register")}>
+                Đang ký
+              </Dropdown.Item>
+              <Dropdown.Item onClick={() => navigate("/account")}>
+                Hồ Sơ
+              </Dropdown.Item>
+            </Dropdown>
+          </Navbar.Link>
         </Navbar.Collapse>
       </Navbar>
       <div className="flex-grow">{children}</div>
@@ -53,7 +64,7 @@ const LayoutUser = ({ children }) => {
           <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
             <div className="pb-4">
               <Footer.Brand
-                className="h-full w-32 md:w-40 xl:w-40 2xl:w-44"
+                className="h-full w-32 md:w-40 xl:w-40 2xl:w-44 rounded-xl"
                 src={logo}
                 alt="logo-teelab"
               />

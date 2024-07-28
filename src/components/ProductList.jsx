@@ -79,10 +79,10 @@ const data = [
   },
 ];
 
-const ProductList = ({ products, title = "ÁO THUN" }) => {
+const ProductList = ({ products, title = "" }) => {
   return (
     <div className="md:px-8 xl:px-8 2xl:px-8 py-8">
-      <div className="px-4 text-2xl font-bold">{title}</div>
+      {title && <div className="px-4 text-2xl font-bold">{title}</div>}
       <div className="py-8">
         <List
           grid={{
@@ -96,22 +96,24 @@ const ProductList = ({ products, title = "ÁO THUN" }) => {
           dataSource={data}
           renderItem={(item) => (
             <List.Item>
-              <div className="text-xs md:text-sm xl:text-base 2xl:text-base w-full px-4 cursor-pointer">
+              <div className="text-xs xl:text-base w-full px-4 cursor-pointer">
                 <div className="py-2">
-                  <img className="rounded-md" src={item.image} alt="" />
+                  <img
+                    className="rounded-md hover:opacity-75"
+                    src={item.image}
+                    alt=""
+                  />
                   <span className="absolute top-2 left-6 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">
                     50% OFF
                   </span>
                 </div>
-                <div className="font-medium truncate-2-lines">
-                  {item.name}
-                </div>
+                <div className="font-medium truncate-2-lines">{item.name}</div>
                 <div className="py-2 font-bold flex gap-4 items-center justify-center">
                   <div className="text-rose-800">
-                    {formatPrice(item.price)} đ
+                    {formatPrice(item.price)}đ
                   </div>
-                  <div className="text-slate-600 line-through">
-                    {formatPrice(item.price)} đ
+                  <div className="text-slate-400 line-through">
+                    {formatPrice(item.price)}đ
                   </div>
                 </div>
               </div>

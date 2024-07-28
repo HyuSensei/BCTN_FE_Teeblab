@@ -104,8 +104,8 @@ const Detail = () => {
           </Breadcrumb.Item>
         </Breadcrumb>
       </div>
-      <div className="flex gap-8 flex-wrap justify-center">
-        <div className="w-full md:h-48 xl:h-48 2xl:h-48 md:1/2 xl:w-1/2 2xl:w-1/2">
+      <div className="flex gap-8 justify-center flex-wrap">
+        <div className="flex-1 max-w-md md:max-w-2xl">
           <Carousel arrows infinite={false}>
             <Image
               src={
@@ -119,15 +119,15 @@ const Detail = () => {
             />
           </Carousel>
         </div>
-        <div className="flex-grow">
-          <div className="text-sm font-medium md:text-base xl:text-xl 2xl:text-xl">
+        <div className="flex-1">
+          <div className="text-sm font-medium md:text-base xl:text-xl">
             Áo Thun Teelab Local Brand Unisex Jersey No.88 Tshirt TS274
           </div>
-          <div className="font-bold text-rose-700 md:text-2xl xl:text-2xl py-2">
+          <div className="py-2 font-bold text-rose-700 md:text-2xl">
             185.000 đ
           </div>
           <div className="py-2 flex gap-2 justify-between flex-wrap text-xs">
-            <div className="w-full flex gap-1 items-center md:w-1/4 xl:w-1/4 2xl:w-1/4">
+            <div className="w-full flex gap-1 items-center md:w-1/4">
               <svg
                 fill="#ce1515"
                 xmlns="http://www.w3.org/2000/svg"
@@ -152,7 +152,7 @@ const Detail = () => {
               </svg>
               <span> Đổi trả dễ dàng</span>
             </div>
-            <div className="w-full flex gap-1 items-center md:w-1/4 xl:w-1/4 2xl:w-1/4">
+            <div className="w-full flex gap-1 items-center md:w-1/4">
               <svg
                 width={isMobile ? "10px" : "15px"}
                 height={isMobile ? "10px" : "15px"}

@@ -1,9 +1,11 @@
 import React from "react";
 import { Collapse, Modal } from "antd";
 import { formatPrice } from "../../helpers/formatPrice";
-import { district, province, commune } from "../../const/address";
 import { MoneyCollectOutlined, WalletOutlined } from "@ant-design/icons";
 import useScreen from "../../hook/useScreen";
+import province from '../../const/province.json';
+import district from '../../const/district.json';
+import commune from '../../const/commune.json';
 
 const CheckOutModal = ({ open, setOpen, handleCheckOut, carts = [] }) => {
   const { isMobile } = useScreen();

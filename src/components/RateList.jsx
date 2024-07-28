@@ -57,7 +57,7 @@ const RateList = ({ rates = [] }) => {
   //   );
   // }
   return (
-    <div className="w-full text-sm bg-gradient-to-t from-slate-50 to-fuchsia-200  px-4 py-4 rounded-md">
+    <div className="w-full text-sm px-4 py-4 rounded-md">
       {Array.from({ length: 5 }).map((_, rateIndex) => (
         <div key={"rate-item-" + rateIndex}>
           <div className="flex items-center gap-2">

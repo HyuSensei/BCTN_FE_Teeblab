@@ -6,7 +6,7 @@ const Profile = () => {
     <div className="text-xs md:text-base xl:text-base 2xl:text-base">
       <div className="font-bold">Thông tin người dùng</div>
       <div className="avatar py-4 flex items-center justify-center">
-        <div className="w-16 md:w-14 xl:w-14 2xl:w-14 rounded-full">
+        <div className="w-16 md:w-20 xl:w-20 2xl:w-20 rounded-full">
           <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
         </div>
       </div>
@@ -45,7 +45,9 @@ const Profile = () => {
           <input type="text" className="input input-bordered w-full input-md" />
         </div>
       </div>
-      <div className="mt-4 bg-black py-3 rounded-md text-slate-50 font-bold text-center">Lưu</div>
+      <div className="mt-4 bg-black py-3 rounded-md text-slate-50 font-bold text-center cursor-pointer">
+        Lưu
+      </div>
     </div>
   );
 };
